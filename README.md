@@ -3,4 +3,4 @@
  
  
 ## Comando para inicializar o projeto
--Package Manager Console: Update-Database
+-Abrir o Package Manager Console, e rodar o seguinte comando: **Update-Database**
