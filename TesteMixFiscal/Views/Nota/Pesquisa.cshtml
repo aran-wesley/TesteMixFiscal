@@ -1,0 +1,141 @@
+﻿@model IEnumerable<TesteMixFiscal.Models.Nota>
+
+@{
+    ViewBag.Title = "Pesquisa";
+}
+
+<h2>Registro(s)</h2>
+
+<br />
+<div class="row" style="margin-bottom: 15px;">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6">
+                @Html.ActionLink("Retornar aos Registros", "Index")
+            </div>
+            <div class="col-md-6" style="text-align:right;">
+                @using (Html.BeginForm("Organizar", "Nota", FormMethod.Get, new { @class = "form-inline" }))
+                {
+                    <input type="hidden" placeholder="Busca" name="nota" class="form-control" value="@Request.QueryString["busca"]" />
+
+                    <input type="submit" class="btn btn-danger" value="Organizar" />
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Tabela do tipo NF-e*@
+<table class="table">
+    <caption>Tabela do tipo NF-e</caption>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodItem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescCompl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ean)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qtd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VlItem)
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Where(x => x.TipoId == 1))
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodItem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescCompl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ean)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qtd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VlItem)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<br />
+<br />
+
+@*Tabela do Tipo SPED*@
+<table class="table">
+    <caption>Tabela do tipo SPED</caption>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodItem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescCompl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ean)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qtd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VlItem)
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Where(x => x.TipoId == 2))
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodItem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescCompl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ean)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qtd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VlItem)
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,74 @@
+﻿@model TesteMixFiscal.Models.Nota
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Nota</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescCompl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescCompl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ean)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ean)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Qtd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Qtd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VlItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VlItem)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NItemId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,80 @@
+﻿@model TesteMixFiscal.Models.Nota
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Nota</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescCompl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescCompl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ean)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ean)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Qtd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Qtd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VlItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VlItem)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

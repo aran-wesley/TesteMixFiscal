@@ -1,0 +1,97 @@
+﻿@model IEnumerable<TesteMixFiscal.Models.Nota>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Registro(s)</h2>
+
+
+@using (Html.BeginForm("Pesquisa", "Nota", FormMethod.Get, new { @class = "form-inline" }))
+{
+    <div class="row">
+        <div class="col-md-12" style="background-color:#e8e8e8; padding:10px; margin-bottom: 20px;">
+
+            <input type="text" placeholder="Busca" name="busca" class="form-control" />
+            <input type="submit" class="btn btn-default" value="buscar" />
+            <br />
+
+            <input type="radio" id="nfe" name="tipo" value="1" />
+            <label for="nfe">Por NF-e</label>
+
+            <br />
+
+            <input type="radio" id="sped" name="tipo" value="2" />
+            <label for="sped">Por SPED</label>
+            <br />
+
+            <input type="radio" id="Descricao" name="tipo" value="3" />
+            <label for="Descricao">Por Descrição</label>
+            <br />
+        </div>
+    </div>
+}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodItem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescCompl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ean)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qtd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VlItem)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodItem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescCompl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ean)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qtd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VlItem)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.NItemId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.NItemId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.NItemId })
+            </td>
+        </tr>
+    }
+
+</table>
+
